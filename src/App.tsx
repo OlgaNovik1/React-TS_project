@@ -1,21 +1,22 @@
-import React, { useState } from 'react';
-import Product from './components/Product';
-import { products } from './data/products';
+import { Routes, Route } from 'react-router-dom';
+import ProductsPage from './pages/ProductsPage';
+import AboutPage from './pages/AboutPage';
+import Navigation from './components/Navigation';
+
+
 
 
 function App() {
-  // const [count, setCount] = useState(0);
-
   return (
-    <div className='container mx-auto max-w-2xl pt-5 font-bold'>
-      <Product product={products[0]} />
-      <Product product={products[1]} />
-      <Product product={products[2]} />
+    <>
+      <Navigation></Navigation>
+      <Routes>
+        <Route path="/" element={<ProductsPage />} />
+        <Route path="/about" element={<AboutPage />} />
+      </Routes>
+    </>
 
-
-    </div>
   )
-
 }
 
 export default App;
